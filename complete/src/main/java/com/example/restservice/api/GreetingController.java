@@ -1,7 +1,9 @@
-package com.example.restservice;
+package com.example.restservice.api;
 
 import java.util.concurrent.atomic.AtomicLong;
 
+import com.example.restservice.model.Greeting;
+import com.example.restservice.model.Person;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,7 +18,7 @@ public class GreetingController {
 	}
 
 	@GetMapping("/person")
-	public Person getPerson(@RequestParam(value = "fName") String firstName,@RequestParam(value = "lName") String lastName){
+	public Person getPerson(@RequestParam(value = "fName") String firstName, @RequestParam(value = "lName") String lastName){
 
 		return new Person(firstName,lastName);
 	}
